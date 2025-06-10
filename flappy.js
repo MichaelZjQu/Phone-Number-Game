@@ -152,11 +152,11 @@ function drawFlappy() {
   // phone number display  
   fill(0, 0, 0, 150);
   noStroke();
-  rect(0, 0, width, 30);
+  rect(0, 0, width, 50);
   fill(255);
-  textSize(18);
+  textSize(25);
   textAlign(LEFT, CENTER);
-  text("Confirm Phone Number: " + phoneNum.join(""), 10, 15);
+  text("Please Verify Again: " + phoneNum.join(""), 10, 15);
 
 
   if(phoneNum.length >= 10) {
