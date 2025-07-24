@@ -31,7 +31,7 @@ function setupInitial(){
     resetButton.y = height/2 + 200;
     resetButton.width = 150;
     resetButton.height = 50;
-    resetButton.color = 'red';
+    resetButton.color = 'green';
     resetButton.text = 'Reset';
     resetButton.textSize = 30;
 
@@ -41,7 +41,7 @@ function setupInitial(){
     submitButton.y = height/2 + 200;
     submitButton.width = 150;
     submitButton.height = 50;
-    submitButton.color = 'green';
+    submitButton.color = 'red';
     submitButton.text = 'Submit';
     submitButton.textSize = 30;
 
@@ -98,16 +98,16 @@ function drawInitial(){
     }
 
     if(resetButton.mouse.hovering()){
-        resetButton.color = color(200, 0, 0);
+        resetButton.color = color(0, 200, 0);
         if(mouse.pressed()){
             initialValues = [0,0,0,0,0,0,0,0,0,0];
         }
     } else {
-        resetButton.color = 'red';
+        resetButton.color = 'green';
     }
 
     if(submitButton.mouse.hovering()){
-        submitButton.color = color(0, 200, 0);
+        submitButton.color = color(200, 0, 0);
         if(mouse.pressed()){
             allSprites.remove();
             setupLoading();
@@ -115,7 +115,7 @@ function drawInitial(){
             currentScene = 'puzzle'; 
         }
     } else {
-        submitButton.color = 'green';
+        submitButton.color = 'red';
     }
 
 
