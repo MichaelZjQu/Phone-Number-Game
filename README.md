@@ -46,6 +46,5 @@ Each coloured ball corresponds to a specific position in the phone number as dra
 - Inverted colours and positioning on buttons (red submit, green reset)
 - No instructions on the game, they are above in the README.
 - Useless loading screens
-- The 3rd stage does not render properly if you are not zoomed out lol
 - Stuff is generally very ugly
 - The stages get very hard
