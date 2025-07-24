@@ -20,11 +20,12 @@ function drawEnd() {
     fill(0);
     textAlign(CENTER);
     textSize(50);
-    text("You have verified your phone number", width/2, height/2 - 100);
-    
+    endText = allCorrect ? "You have verified your phone number" : "Verification Failed!";
+    text(endText, width/2, height/2 - 100);
+
     textSize(30);
     textAlign(RIGHT);
-    text("entered it wrong?", width/2 - 20, height/2 + 60);
+    text("try again?", width/2 - 20, height/2 + 60);
 
     if(retryButton.mouse.hovering()) {
         retryButton.color = color(0, 0, 200);

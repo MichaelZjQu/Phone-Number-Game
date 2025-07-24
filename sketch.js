@@ -10,7 +10,6 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   setupInitial();
-  // setupFlappy();
 }
 
 function draw(){

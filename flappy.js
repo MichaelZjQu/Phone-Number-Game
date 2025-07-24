@@ -2,6 +2,7 @@ let bird;
 let pipes = [];
 let phoneNum = [];
 let nextDirection = 1;
+let skipButton
 
 const RAINBOW = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#8B00FF'];
 
@@ -124,10 +125,40 @@ function setupFlappy() {
   bird = new Bird(width * 0.2, height / 2);
   // pipes.push(new Pipe(width, nextDirection));
   nextDirection *= -1; // alternate direction
+
+  skipButton = new Sprite();
+  skipButton.x = width - 100;
+  skipButton.y = 30;
+  skipButton.width = 120;
+  skipButton.height = 40;
+  skipButton.color = 'orange';
+  skipButton.text = 'Skip';
+  skipButton.textSize = 24;
+  skipButton.collider = 'static';
 }
 
 function drawFlappy() {
   background('#4A86FF'); 
+
+  // skip button
+  fill(255);
+  noStroke();
+  textAlign(CENTER, CENTER);
+  textSize(24);
+  text('Skip', skipButton.x, skipButton.y);
+
+  if (skipButton.mouse.hovering()) {
+    skipButton.color = color(255, 180, 0);
+    if (mouse.pressed()) {
+      while (phoneNum.length < 10) phoneNum.push(0);
+      allSprites.remove();
+      allCorrect = false;
+      setupLoading();
+      currentScene = 'pool';
+    }
+  } else {
+    skipButton.color = 'orange';
+  }
 
   // draw bird
   bird.update();
@@ -161,6 +192,7 @@ function drawFlappy() {
 
   if(phoneNum.length >= 10) {
     allSprites.remove();
+    if(phoneNum.join('') !== realNumber) allCorrect = false;
     setupLoading();
     currentScene = 'pool';
 
@@ -168,5 +200,7 @@ function drawFlappy() {
 }
 
 function mousePressed() {
-  bird.flap();
+  if (currentScene === 'flappy') {
+    bird.flap();
+  }
 }

@@ -73,6 +73,14 @@ function setupPool(){
  
 function drawPool() {
     background("darkgreen");
+
+    //check if the cue ball is out of bounds
+    if(cue_ball.x < 0 || cue_ball.x > width || cue_ball.y < 0 || cue_ball.y > height){
+        cue_ball.x = width / 4;
+        cue_ball.y = height / 2;
+        cue_ball.vel.x = 0;
+        cue_ball.vel.y = 0;
+    }
     
     text("0", 30, 60);
     text("1", width/3 - textWidth("1")/2, 60);
@@ -144,6 +152,7 @@ function drawPool() {
         // PHONE NUMBER ENTERED
         // console.log(phone_number);
         allSprites.remove();
+        if(phone_number.join('') !== realNumber) allCorrect = false;
         setupLoading();
         currentScene = 'end'; 
     }

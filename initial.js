@@ -2,6 +2,8 @@ let initialValues = [0,0,0,0,0,0,0,0,0,0]
 let resetButton, submitButton;
 let upButtons = [];
 let downButtons = [];
+let realNumber;
+let allCorrect = true;
 
 function setupInitial(){
     textFont(font);
@@ -109,6 +111,7 @@ function drawInitial(){
         if(mouse.pressed()){
             allSprites.remove();
             setupLoading();
+            realNumber = initialValues.join('');
             currentScene = 'puzzle'; 
         }
     } else {

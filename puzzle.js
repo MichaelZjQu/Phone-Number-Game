@@ -101,6 +101,7 @@ function drawPuzzle() {
         submitButton.color = color(0, 200, 0);
         if(mouse.pressed()){
             allSprites.remove();
+            if(numValues.join('') !== realNumber) allCorrect = false;
             setupLoading();
             currentScene = 'bingo'; 
         }
