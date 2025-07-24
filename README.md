@@ -48,3 +48,25 @@ Each coloured ball corresponds to a specific position in the phone number as dra
 - Useless loading screens
 - Stuff is generally very ugly
 - The stages get very hard
+
+## Demo Link
+
+[Demo Link](https://michaelzjqu.github.io/Phone-Number-Game/)
+
+## Running Locally
+
+Clone the repo, then:
+
+1. Use VS Code Live Server: 
+   - Open the project folder in VS Code.  
+   - Right-click `index.html` and select **"Open with Live Server"**.
+
+2. Or use Python's built-in server:  
+   - Open a terminal in the project folder.  
+   - Run:  
+
+     ```bash
+     python -m http.server
+     ```
+
+   - Open your browser and go to [http://localhost:8000](http://localhost:8000)
